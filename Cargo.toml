@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["netabase_arena",
+    "netabase_macros",
+    "netabase_store",
+]

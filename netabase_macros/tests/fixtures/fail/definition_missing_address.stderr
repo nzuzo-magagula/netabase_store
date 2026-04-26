@@ -1,0 +1,5 @@
+error: Missing definition name
+ --> tests/fixtures/fail/definition_missing_address.rs:5:9
+  |
+5 | pub mod definition {
+  |         ^^^^^^^^^^

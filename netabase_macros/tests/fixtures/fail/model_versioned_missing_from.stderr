@@ -1,0 +1,49 @@
+error[E0277]: the trait bound `UserV2: From<UserV1>` is not satisfied
+  --> tests/fixtures/fail/model_versioned_missing_from.rs:18:47
+   |
+18 |     #[derive(Archive, Serialize, Deserialize, NetabaseModel, Clone, Debug, PartialEq, Eq, PartialOrd, Ord)]
+   |                                               ^^^^^^^^^^^^^ unsatisfied trait bound
+   |
+help: the trait `From<UserV1>` is not implemented for `UserV2`
+  --> tests/fixtures/fail/model_versioned_missing_from.rs:21:5
+   |
+21 |     pub struct UserV2 {
+   |     ^^^^^^^^^^^^^^^^^
+   = help: see issue #48214
+   = note: this error originates in the derive macro `NetabaseModel` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: add `#![feature(trivial_bounds)]` to the crate attributes to enable
+   |
+ 3 + #![feature(trivial_bounds)]
+   |
+
+error[E0599]: the method `to_current` exists for struct `UserV1`, but its trait bounds were not satisfied
+  --> tests/fixtures/fail/model_versioned_missing_from.rs:31:8
+   |
+10 | pub struct UserV1 {
+   | ----------------- method `to_current` not found for this struct because it doesn't satisfy `UserV1: UserV2Versioned`
+...
+21 |     pub struct UserV2 {
+   |     ----------------- doesn't satisfy `UserV2: From<UserV1>`
+...
+31 |     v1.to_current()
+   |        ^^^^^^^^^^ method cannot be called on `UserV1` due to unsatisfied trait bounds
+   |
+note: trait bound `UserV2: From<UserV1>` was not satisfied
+  --> tests/fixtures/fail/model_versioned_missing_from.rs:20:59
+   |
+20 |     #[netabase(definition(UserDefinition), version(prev = super::UserV1))]
+   |                                                           ^^^^^^^^^^^^^
+21 |     pub struct UserV2 {
+   |                ^^^^^^
+note: the trait `From` must be implemented
+  --> $RUST/core/src/convert/mod.rs
+   |
+   | pub const trait From<T>: Sized {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   = help: items from traits can only be used if the trait is implemented and in scope
+note: `UserV2Versioned` defines an item `to_current`, perhaps you need to implement it
+  --> tests/fixtures/fail/model_versioned_missing_from.rs:18:47
+   |
+18 |     #[derive(Archive, Serialize, Deserialize, NetabaseModel, Clone, Debug, PartialEq, Eq, PartialOrd, Ord)]
+   |                                               ^^^^^^^^^^^^^
+   = note: this error originates in the derive macro `NetabaseModel` (in Nightly builds, run with -Z macro-backtrace for more info)

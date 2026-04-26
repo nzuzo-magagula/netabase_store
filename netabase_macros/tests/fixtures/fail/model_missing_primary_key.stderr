@@ -1,0 +1,11 @@
+error: Model must have either a primary key field or a primary_key_type attribute
+ --> tests/fixtures/fail/model_missing_primary_key.rs:5:12
+  |
+5 | pub struct NoPk {
+  |            ^^^^
+
+error: External key models require either hash_fn or key_fn to extract the key
+ --> tests/fixtures/fail/model_missing_primary_key.rs:5:12
+  |
+5 | pub struct NoPk {
+  |            ^^^^

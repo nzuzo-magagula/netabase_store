@@ -1,0 +1,12 @@
+error[E0597]: `buf.0` does not live long enough
+  --> tests/fixtures/fail/dyn_idx_cross_arena.rs:24:68
+   |
+23 |         let mut buf = Buf([0u8; 64]);
+   |             ------- binding `buf` declared here
+24 |         let mut arena = TypedArena::<Point, 4, DefaultConfig>::new(&mut buf.0).unwrap();
+   |                                                                    ^^^^^^^^^^ borrowed value does not live long enough
+...
+27 |     }
+   |     - `buf.0` dropped here while still borrowed
+28 |     let _ = escaped_idx;
+   |             ----------- borrow later used here

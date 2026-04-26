@@ -1,0 +1,33 @@
+[package]
+name = "netabase_store"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = ["std", "redb-backend"]
+# Host-side conveniences: alloc-backed codec helpers, boxed backend errors,
+# the string path surface, and blob tables. The kernel data plane builds
+# without it (`--no-default-features --features arena-store`).
+std = ["rkyv/std", "strum/std", "blake3/std"]
+# Persistent backend over redb (real ACID transactions).
+redb-backend = ["std", "dep:redb"]
+# Persistent backend over fjall (LSM; single-writer transactions).
+fjall-backend = ["std", "dep:fjall"]
+# Volatile no_std backend over netabase_arena manifest regions. (The
+# netabase_arena dependency itself is unconditional — fixed-capacity model
+# types are part of the core vocabulary on every backend.)
+arena-store = []
+
+[dependencies]
+redb = { version = "4.1.0", optional = true }
+fjall = { version = "3.1.4", optional = true }
+strum = { version = "0.28.0", default-features = false }
+blake3 = { version = "1.8.5", default-features = false }
+# `unaligned` keeps archived layouts align-1/zero-padding workspace-wide —
+# the canonical byte form shared by arena slots and persistent values.
+rkyv = { version = "0.8.16", default-features = false, features = ["bytecheck", "unaligned"] }
+netabase_arena = { path = "../netabase_arena" }
+
+[dev-dependencies]
+tokio = { version = "1.37.0", features = ["full"] }
+netabase_macros = { path = "../netabase_macros" }

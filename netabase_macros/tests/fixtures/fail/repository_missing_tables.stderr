@@ -1,0 +1,5 @@
+error: Missing repository name
+ --> tests/fixtures/fail/repository_missing_tables.rs:5:9
+  |
+5 | pub mod repositories {
+  |         ^^^^^^^^^^^^

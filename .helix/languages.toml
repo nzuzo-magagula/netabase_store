@@ -1,0 +1,15 @@
+# Helix Editor Configuration for Structural AST Comment Language
+#
+# To use this locally, copy the content below into your project's .helix/languages.toml
+# or your global ~/.config/helix/languages.toml.
+#
+# Note: Ensure you have built the LSP first: cargo build -p nuts_ast_lsp
+
+[[language]]
+name = "rust"
+# We add our custom LSP alongside rust-analyzer
+language-servers = [ "rust-analyzer", "nuts-ast-lsp" ]
+
+[language-server.nuts-ast-lsp]
+command = "/home/rusta/Projects/nuts/target/debug/nuts_ast_lsp"
+# The LSP uses stdin/stdout by default, so no args are needed for stdio mode.
