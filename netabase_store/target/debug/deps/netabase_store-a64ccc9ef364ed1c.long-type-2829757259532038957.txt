@@ -1,0 +1,2 @@
+<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Relational as traits::structural::model::tables::ModelTable>::Key
+<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Relational as traits::structural::model::tables::ModelTable>::Key: traits::structural::model::keys::relational::RelationalKey<R, D, M>

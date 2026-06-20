@@ -1,0 +1,2 @@
+<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Subscription as traits::structural::model::tables::ModelTable>::Value
+<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Subscription as traits::structural::model::tables::ModelTable>::Value: traits::structural::model::values::subscription::SubscriptionValue<R, D, M>

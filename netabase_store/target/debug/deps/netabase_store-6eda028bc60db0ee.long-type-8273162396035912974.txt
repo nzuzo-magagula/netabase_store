@@ -1,0 +1,1 @@
+<<Self as ModelTables<R, D, M>>::Relational as ModelTable>::Key: RelationalKey<R, D, M>
