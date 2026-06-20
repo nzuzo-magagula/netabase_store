@@ -1,1 +1,0 @@
-traits::structural::schema::repositories::NoRepository: traits::structural::schema::repositories::NetabaseRepository

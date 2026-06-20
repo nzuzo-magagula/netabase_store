@@ -1,5 +1,4 @@
-// @review [x]
-pub mod addressing;
-pub mod config;
-pub mod database;
-pub mod schema;
+// @review [~]
+pub mod definition;
+pub mod model;
+pub mod repository;

@@ -1,9 +1,0 @@
-error[E0502]: cannot borrow `arena` as mutable because it is also borrowed as immutable
-  --> tests/fixtures/fail/slot_ptr_blocks_reset.rs:24:5
-   |
-23 |     let ptr = arena.validate_slot_ptr(arena.buf_start()).unwrap();
-   |               ----- immutable borrow occurs here
-24 |     arena.reset(); //~ ERROR cannot borrow `arena` as mutable
-   |     ^^^^^^^^^^^^^ mutable borrow occurs here
-25 |     let _ = ptr;
-   |             --- immutable borrow later used here

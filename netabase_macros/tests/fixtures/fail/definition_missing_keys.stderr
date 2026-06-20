@@ -1,5 +1,0 @@
-error: expected `mod`
- --> tests/fixtures/fail/definition_missing_keys.rs:5:5
-  |
-5 | pub struct NotAModule;
-  |     ^^^^^^
