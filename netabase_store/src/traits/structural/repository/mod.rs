@@ -1,10 +1,16 @@
 // @review [ ]
-use crate::traits::structural::{Addressable, repository::tables::RepositoryTables};
+use crate::traits::structural::contract::Scope;
 
-pub mod keys;
-pub mod tables;
-pub mod values;
+pub mod repo_keys;
+pub mod repo_tables;
+pub mod repo_values;
 
-pub trait Repository: Sized + Addressable {
-    type Tables: RepositoryTables<Self>;
+pub trait Repository: Scope {}
+
+pub struct NoRepository;
+
+impl Scope for NoRepository {
+    type Tables;
 }
+
+impl Repository for NoRepository {}

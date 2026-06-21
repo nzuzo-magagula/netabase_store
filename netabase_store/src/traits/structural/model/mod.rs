@@ -1,12 +1,9 @@
 // @review [~]
-use crate::traits::structural::{
-    Addressable, definition::Definition, model::tables::ModelTables, repository::Repository,
-};
+use crate::traits::structural::contract::Scope;
+use crate::traits::structural::{definition::Definition, repository::Repository};
 
-pub mod keys;
-pub mod tables;
-pub mod values;
+pub mod model_keys;
+pub mod model_tables;
+pub mod model_values;
 
-pub trait Model<R: Repository, D: Definition<R>>: Sized + Addressable {
-    type Tables: ModelTables<R, D, Self>;
-}
+pub trait Model<R: Repository, D: Definition<R>>: Scope {}

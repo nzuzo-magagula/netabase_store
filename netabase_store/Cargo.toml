@@ -3,4 +3,13 @@ name = "netabase_store"
 version = "0.1.0"
 edition = "2024"
 
+[features]
+# Core is `no_std` by default; `std` is opt-in and required by the host-side
+# database backends (see the crate-level docs).
+default = []
+std = []
+
 [dependencies]
+strum = { version = "0.28.0", features = ["derive"] }
+rkyv = "0.8.16"
+netabase_arena = { path = "../netabase_arena" }

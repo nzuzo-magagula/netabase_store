@@ -1,0 +1,8 @@
+[package]
+name = "netabase_arena"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bumpalo = "3.20"
+rkyv = "0.8.16"
