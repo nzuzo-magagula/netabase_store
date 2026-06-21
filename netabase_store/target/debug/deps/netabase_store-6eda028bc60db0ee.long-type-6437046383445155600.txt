@@ -1,1 +1,0 @@
-<<Self as ModelTables<R, D, M>>::Subscription as ModelTable>::Key: SubscriptionKey<R, D, M>

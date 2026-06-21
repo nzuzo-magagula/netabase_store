@@ -5,6 +5,6 @@ pub mod relational;
 pub mod secondary;
 pub mod subscription;
 
-use crate::traits::structural::model::tables::ModelTable;
+use crate::traits::structural::{Addressable, model::tables::ModelTable};
 
-pub trait TableValue<T: ModelTable> {}
+pub trait TableValue<T: ModelTable>: Addressable {}

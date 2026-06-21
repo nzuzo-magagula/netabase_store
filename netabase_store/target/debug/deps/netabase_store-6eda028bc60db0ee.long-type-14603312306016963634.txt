@@ -1,1 +1,0 @@
-<<Self as ModelTables<R, D, M>>::Secondary as ModelTable>::Value: SecondaryValue<R, D, M>

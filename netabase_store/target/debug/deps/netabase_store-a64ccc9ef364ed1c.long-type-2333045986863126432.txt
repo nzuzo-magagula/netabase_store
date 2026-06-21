@@ -1,2 +1,0 @@
-<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Blob as traits::structural::model::tables::ModelTable>::Value
-<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Blob as traits::structural::model::tables::ModelTable>::Value: traits::structural::model::values::blob::BlobValue<R, D, M>

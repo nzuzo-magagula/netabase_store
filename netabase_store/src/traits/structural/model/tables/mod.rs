@@ -1,4 +1,5 @@
 // @review [~]
+use crate::traits::structural::Addressable;
 use crate::traits::structural::model::Definition;
 use crate::traits::structural::model::keys::blob::BlobKey;
 use crate::traits::structural::model::keys::primary::PrimaryKey;
@@ -24,12 +25,12 @@ pub mod relational;
 pub mod secondary;
 pub mod subscription;
 
-pub trait ModelTable: std::marker::Sized {
+pub trait ModelTable: std::marker::Sized + Addressable {
     type Key: TableKey<Self>;
     type Value: TableValue<Self>;
 }
 
-pub trait ModelTables<R: Repository, D: Definition<R>, M: Model<R, D>>
+pub trait ModelTables<R: Repository, D: Definition<R>, M: Model<R, D>>: Addressable
 where
     <<Self as ModelTables<R, D, M>>::Primary as ModelTable>::Key: PrimaryKey<R, D, M>,
     <<Self as ModelTables<R, D, M>>::Secondary as ModelTable>::Key: SecondaryKey<R, D, M>,

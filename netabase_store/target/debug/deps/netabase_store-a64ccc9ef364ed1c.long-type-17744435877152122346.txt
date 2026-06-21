@@ -1,2 +1,0 @@
-<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Secondary as traits::structural::model::tables::ModelTable>::Value
-<<Self as traits::structural::model::tables::ModelTables<R, D, M>>::Secondary as traits::structural::model::tables::ModelTable>::Value: traits::structural::model::values::secondary::SecondaryValue<R, D, M>
