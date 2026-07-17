@@ -560,6 +560,7 @@ dependencies = [
 [[package]]
 name = "proc_macro_flow_core"
 version = "0.1.0"
+source = "git+ssh://git@github.com/nzuzo-magagula/proc_macro_flow.git?branch=core#17c271639ce8456c11dc584bc050a2d214842ab9"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -569,6 +570,7 @@ dependencies = [
 [[package]]
 name = "proc_macro_flow_macros"
 version = "0.1.0"
+source = "git+ssh://git@github.com/nzuzo-magagula/proc_macro_flow.git?branch=core#17c271639ce8456c11dc584bc050a2d214842ab9"
 dependencies = [
  "proc-macro2",
  "proc_macro_flow_core",
@@ -580,6 +582,7 @@ dependencies = [
 [[package]]
 name = "proc_macro_flow_macros_core"
 version = "0.1.0"
+source = "git+ssh://git@github.com/nzuzo-magagula/proc_macro_flow.git?branch=core#17c271639ce8456c11dc584bc050a2d214842ab9"
 dependencies = [
  "proc-macro2",
  "proc_macro_flow_core",

@@ -10,8 +10,8 @@ proc-macro = true
 syn = { version = "2.0", features = ["full", "extra-traits", "visit"] }
 quote = "1.0"
 proc-macro2 = "1.0"
-proc_macro_flow_core = { path = "../../proc_macro_flow/proc_macro_flow_core" }
-proc_macro_flow_macros = { path = "../../proc_macro_flow/proc_macro_flow_macros" }
+proc_macro_flow_core = { git = "ssh://git@github.com/nzuzo-magagula/proc_macro_flow.git", branch = "core" }
+proc_macro_flow_macros = { git = "ssh://git@github.com/nzuzo-magagula/proc_macro_flow.git", branch = "core" }
 strum = "0.28"
 
 [dev-dependencies]
